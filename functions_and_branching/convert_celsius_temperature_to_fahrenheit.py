@@ -7,7 +7,7 @@ def convert_celcius_temperature_to_ferenheight_temperature(celcius_temperature):
 
 
 if __name__ == "__main__":
-celcius_temperature = [0, 21, 100]
+  celcius_temperature = [0, 21, 100]
 print('T_C\t\tT_C(T_F(T_C))')
 for some_celcius_temperature in celcius_temperature:
   converted_temperature = convert_ferenheight_temperature_to_celcius_temperature(convert_celcius_temperature_to_ferenheight_temperature(some_celcius_temperature))

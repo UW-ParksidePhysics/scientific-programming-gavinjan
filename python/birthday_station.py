@@ -33,20 +33,20 @@ class spacestation:
         
         thick = 0.5 # thickness of space station
         dtheta = 2 * pi / self.N
-        paint = color.red
-        red = True
+        paint = color.blue
+        blue = True
         boxes = [self.person]
         
         for i in range(self.N):
             theta = i * dtheta
             b = box(pos=(self.R + thick / 2) * vector(cos(theta), sin(theta), 0),
                     size=vector(thick, 2 * (self.R + thick) * sin(dtheta / 2), thick))
-            if red:
-              b.color = color.red
-              red = False
+            if blue:
+              b.color = color.orange
+              orange = False
             else:
               b.color = color.blue
-              red = True
+              blue = True
             b.rotate(angle=theta, axis=vector(0, 0, 1))
             boxes.append(b)
         
@@ -119,7 +119,7 @@ Inertial frame on the left, rotating frame on the right."""
 station1 = spacestation(scene1)
 station2 = spacestation(scene2)
 scene1.autoscale = scene2.autoscale = False
-omega = 1  # angular speed of space station; period of rotation is 2*pi/omega
+omega = 1.5  # angular speed of space station; period of rotation is 2*pi/omega
 deltat = 0.001 * 2 * pi / omega
 v0 = omega * (station1.R - station1.h)
 scalefactor = 5 / (omega * station1.R)
